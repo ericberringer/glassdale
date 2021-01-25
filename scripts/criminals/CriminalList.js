@@ -3,11 +3,12 @@ import { Criminal } from './Criminal.js'
 // useCriminals is an array holding a copy of each criminal and their specs.
 // getCriminals is using an api to retrieve all of the criminals from the database.
 
-export const CriminalList = () => {
+export const criminalList = () => {
     
-    // getCriminals is returning the promise which is getting all the infro from the api
+    // getCriminals is returning the promise which is getting all the info from the api
     getCriminals() 
         .then(() => {
+            
             const criminalArray = useCriminals()
 
             /*
@@ -16,9 +17,9 @@ export const CriminalList = () => {
             */
            
            
-           const criminalContainer = document.querySelectorAll('.criminalsContainer')
+           const criminalContainer = document.querySelector('.criminalsContainer')
            
-           criminalHTMLRepresentation = ""
+           let criminalHTMLRepresentation = ""
            for(const criminal of criminalArray) {
                criminalHTMLRepresentation += Criminal(criminal)
             }
