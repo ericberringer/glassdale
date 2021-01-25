@@ -1,9 +1,9 @@
 export const Criminal = (criminal) => {
     return `
     <h2>${criminal.name}</h2>
-    <p>${criminal.age}</p>
-    <p>${criminal.conviction}</p>
-    <p>${criminal.incarceration.start}</p>
-    <p>${criminal.incarceration.end}</p>
+    <p>Age: ${criminal.age}</p>
+    <p>Crime: ${criminal.conviction}</p>
+    <p>Term Start: ${criminal.incarceration.start}</p>
+    <p>Term End: ${criminal.incarceration.end}</p>
     `
 }

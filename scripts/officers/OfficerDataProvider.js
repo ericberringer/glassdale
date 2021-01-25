@@ -5,10 +5,9 @@ export const useOfficers = () => {
 }
 
 export const getOfficers = () => {
-    return fetch("https://criminals.glassdale.us/officers")
+    return fetch("https://criminals.glassdale.us/criminals")
         .then(response => response.json())
-        .then(
-            parsedOfficers => {
+        .then(parsedOfficers => {
                 console.table(parsedOfficers)
                 officers = parsedOfficers
             }
