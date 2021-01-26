@@ -8,6 +8,7 @@ import { getConvictions, useConvictions } from './ConvictionProvider.js'
 // Get a reference to the DOM element where the <select> will be rendered
 const contentTarget = document.querySelector(".filters__crime")
 
+
 export const ConvictionSelect = () => {
     // Trigger fetching the API data and loading it into application state
     getConvictions()
@@ -36,6 +37,12 @@ const render = convictionsCollection => {
     // [
     //     "<option value="1">arson</option>
     // ]
+
+    // using .map on convictionsCollection will iterate through each item of our convictions array,
+    // we use a function as a parameter of .map() and return our option tag that will be sent to the DOM. We 
+    //  use string interpolation to select the id of each crime stored in 'value' and the crime name that goes in 
+    // the body of the option tag that will show up in the dropdown menu.
+
     contentTarget.innerHTML = `
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
