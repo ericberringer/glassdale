@@ -50,7 +50,7 @@ const render = convictionsCollection => {
     // }
     // ]
 
-    // The new array that .map() gives me will lok like this: 
+    // The new array that .map() gives me will look like this: 
     // [
     //     "<option value="1">arson</option>
     // ]
