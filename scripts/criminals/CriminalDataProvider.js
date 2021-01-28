@@ -7,7 +7,7 @@ export const useCriminals = () => {
 // useCriminals returns a copy of each object in the array
 
 // getCriminals is fetching the data from our criminals api and making it usable in JS. Once the api info is 
-// gathered we tell it to get stored in the empty criminals array.
+// gathered we tell it to get stored in the empty criminals array. 
 export const getCriminals = () => {
     return fetch("https://criminals.glassdale.us/criminals")
         .then(response => response.json())
