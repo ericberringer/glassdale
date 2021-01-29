@@ -58,6 +58,7 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
         Now that we have the name of the chosen crime, filter the criminals data down to the people that committed the crime
       */
       const filteredCriminalsArray = criminalsArray.filter(criminalObj => {
+          
         return criminalObj.conviction === chosenConvictionObject.name
       })
   

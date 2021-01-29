@@ -4,10 +4,14 @@ import { useConvictions } from './convictions/ConvictionProvider.js'
 import { ConvictionSelect } from './convictions/ConvictionSelect.js'
 import { OfficerList } from './officers/OfficerList.js'
 import { OfficerSelect } from './officers/OfficerSelect.js'
+import { NoteForm } from './notes/NoteForm.js'
+import { ShowNoteButton } from './notes/ShowNotesButton.js'
 
 
 // getConvictions()
 // .then(() => console.log(useConvictions()))
+ShowNoteButton()
+NoteForm()
 CriminalList()
 ConvictionSelect()
 OfficerList()

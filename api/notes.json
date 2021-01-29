@@ -1,0 +1,20 @@
+{
+  "notes": [
+    {
+      "text": "Guilty Probably",
+      "suspect": "Scort McGort",
+      "date": "",
+      "author": "Gort MgScort",
+      "intuition": "Feels Guilty",
+      "id": 1
+    },
+    {
+      "text": "Guilty Probably",
+      "suspect": "Scort McGort",
+      "date": "01/10/1988",
+      "author": "Gort MgScort",
+      "intuition": "Feels Guilty",
+      "id": 2
+    }
+  ]
+}
