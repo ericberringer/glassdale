@@ -8,3 +8,5 @@ export const NoteHTMLConverter = (noteObject) => {
         </section>
     `
 }
+
+// Here we are converting the note object into an HTML representation string.
