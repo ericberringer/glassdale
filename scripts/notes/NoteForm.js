@@ -1,27 +1,38 @@
 import { saveNote } from "./NoteProvider.js"
 
-const eventHub = document.querySelector(".container")
 const contentTarget = document.querySelector(".noteFormContainer")
+const eventHub = document.querySelector(".container")
 
+// This is the HTML to construct out form on the DOM, includes the fields for
+// author, note, suspect, and the saveNote button, etc.
 const render = () => {
     contentTarget.innerHTML = `
-        
+    <form action="">
         <label htmlFor="note-text">Note: </label>
         <input type="text" placeholder="Write Note Here" id="note-text">
+        <label htmlFor="note-author">Author: </label>
+        <input type="text" placeholder="Author" id="note-author">
         <label htmlFor="note-date">Note: </label>
         <input type="date" placeholder="Date" id="note-date">
-        <label htmlFor="note-suspect">Note: </label>
+        <label htmlFor="note-suspect">Suspect: </label>
+        <input type="text" placeholder="Enter Suspect Name" id="note-intuition">
+        <label htmlFor="note-intuition">Intuition: </label>
         <input type="text" placeholder="Enter Suspect Name" id="note-suspect">
         
         <button id="saveNote">Save Note</button>
+    </form>
     `
 }
 
+// Calling NoteForm on main.js will render the form and button html to the DOM.
 export const NoteForm = () => {
     render()
 }
 
-// Handle browser-generated click event in component. "saveNote is id of the Save Note Button in above HTML."
+// We need to listen for a click event in our eventHub (main container). 
+// "saveNote is id of the Save Note Button in above HTML."
+// if the button is clicked, a new note will be constructed, the consts in the
+// is statement are connecting the object properties with their representation in the above HTML.
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
         const suspect = document.querySelector("#note-suspect").value
@@ -39,11 +50,12 @@ eventHub.addEventListener("click", clickEvent => {
             "intuition": intuition
         }
 
-        // saveNote houses the info from the api, newNote holds the structure of the key/value pairs, which is
+        // saveNote (from NoteProvider.js) houses the info from the api, newNote holds the structure of the key/value pairs, which is
         // the representation of each object from the api.
         // Call saveNote and pass in newNote. saveNote is executed when the click event on the save note button
         // is clicked.
         saveNote(newNote)
+        //  This function call marries the api info with its html structure and the rendering to the DOM.
     }
 })
 

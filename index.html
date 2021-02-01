@@ -11,19 +11,26 @@
 
     <main class="container">
         <header>
+            <h1>Welcome to Glassdale PD</h1>
             <div class="filters">
+                <p>Filter Criminals by:</p>
                 <div class="filter filters__crime"></div>
-                <div class="filter filters__incarceration"></div>
+                <p>or</p>
                 <div class="filter filters__officer"></div>
+                <div class="filter filters__incarceration"></div>
             </div>
         </header>
-        <article class="noteFormContainer"></article>
-        <article class="criminalsContainer"></article>
-        <article class="officersContainer"></article>
-        <aside class="noteListContainer">
-            <div class="noteListButton"></div>
-            <article class="noteList"></article>
-        </aside>
+        <div class="caseDataContainer">
+            <section>           
+                <article class="criminalsContainer"></article>
+                <article class="officersContainer"></article>
+            </section>
+            <aside class="notesAside">
+                <article class="noteFormContainer"></article>
+                <div class="noteListButton"></div>
+                <article class="notesContainer"></article>
+            </aside>
+        </div>
     </main>
 
     <script type="module" src="./scripts/main.js"></script>

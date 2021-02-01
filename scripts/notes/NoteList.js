@@ -2,10 +2,12 @@ import { getNotes, useNotes } from "./NoteProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
 
 // Query the DOM for the element that your notes will be added to 
-const contentTarget = document.querySelector(".noteList")
+const contentTarget = document.querySelector(".notesContainer")
 // Define ye olde Evente Hubbe
-const eventHub = document.querySelector(".noteListContainer")
+const eventHub = document.querySelector(".container")
 
+// This event listener listens for a click. NoteList() from down below, gets all the notes
+// and renders them to the DOM when called.
 eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
 })
