@@ -7,8 +7,10 @@ import { OfficerSelect } from './officers/OfficerSelect.js'
 import { NoteForm } from './notes/NoteForm.js'
 import { ShowNoteButton } from './notes/ShowNotesButton.js'
 import './notes/NoteList.js'
+import { getWitnesses } from './witnesses/WitnessDataProvider.js'
 
 
+console.log(getWitnesses())
 // getConvictions()
 // .then(() => console.log(useConvictions()))
 OfficerList()

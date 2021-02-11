@@ -15,14 +15,21 @@ const render = () => {
         <label htmlFor="note-date">Note: </label>
         <input type="date" placeholder="Date" id="note-date">
         <label htmlFor="note-suspect">Suspect: </label>
-        <input type="text" placeholder="Enter Suspect Name" id="note-intuition">
+
+        <select placeholder="Select Suspect" id="noteForm--criminal" class="criminalSelect">
+        </select>
+        
         <label htmlFor="note-intuition">Intuition: </label>
         <input type="text" placeholder="Enter Suspect Name" id="note-suspect">
         
         <button id="saveNote">Save Note</button>
-    </form>
-    `
-}
+        </form>
+        `
+    }
+    // This goes in the above select tag.
+    // <option value="${ criminal.id }">${ criminal.name }</option>
+    // This was under the suspect label tag
+    // <input type="text" placeholder="Enter Suspect Name" id="note-intuition">
 
 // Calling NoteForm on main.js will render the form and button html to the DOM.
 export const NoteForm = () => {
@@ -35,6 +42,7 @@ export const NoteForm = () => {
 // is statement are connecting the object properties with their representation in the above HTML.
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "saveNote") {
+        clickEvent.preventDefault()
         const suspect = document.querySelector("#note-suspect").value
         const author = document.querySelector("#note-author").value
         const date = document.querySelector("#note-date").value
