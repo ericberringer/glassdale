@@ -71,7 +71,7 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
     }
   })
 
-  eventHub.addEventListener("officerSelect", event => {
+  eventHub.addEventListener("officerSelected", event => {
     // How can you access the officer name that was selected by the user?
     const officerName = event.detail.selectedOfficerName
 
