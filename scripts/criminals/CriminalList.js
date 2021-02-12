@@ -86,3 +86,4 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
     )
     renderToDom(filteredCriminalsArray)
 })
+
