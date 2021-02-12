@@ -3,7 +3,6 @@ let notes = []
 // Post request to create a new note
 export const saveNote = note => {
     let stringifiedObj = JSON.stringify(note)
-    debugger
     return fetch('http://localhost:8088/notes', {
         method: "POST",
         headers: {
@@ -35,3 +34,9 @@ const dispatchStateChangeEvent = () => {
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
 
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+}
