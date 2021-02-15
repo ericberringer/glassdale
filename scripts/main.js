@@ -9,6 +9,11 @@ import { ShowNoteButton } from './notes/ShowNotesButton.js'
 import './notes/NoteList.js'
 import { getWitnesses } from './witnesses/WitnessDataProvider.js'
 import { ShowWitnessesButton } from './witnesses/ShowWitnessesButton.js'
+import { getFacilities } from './facilities/FacilityProvider.js'
+import { getCriminalFacilities } from './facilities/CriminalFacilityProvider.js'
+
+getCriminalFacilities()
+getFacilities()
 
 console.log(getWitnesses())
 // getConvictions()
