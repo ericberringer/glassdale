@@ -6,7 +6,7 @@ export const Witness = (witness) => {
         <h2>${witness.name}</h2>
         <p>${witness.statements}</p>
 
-        </article>
+     </article>
         `
     }
 
