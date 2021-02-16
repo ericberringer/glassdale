@@ -30,7 +30,7 @@ const render = (criminalSelectArray) => {
         </select>
         
         <label htmlFor="note-intuition">Intuition: </label>
-        <input type="text" placeholder="Enter Intuiotion" id="note-intuition">
+        <input type="text" placeholder="Enter Intuition" id="note-intuition">
         
         <button id="saveNote">Save Note</button>
         </form>
