@@ -22,7 +22,7 @@ contentTarget.addEventListener("click", clickEvent => {
                 witnessStatementsHTMLRep += Witness(witness)
             }
             document.querySelector(".witnessContainer").innerHTML = `
-            <h3>Witness Statements</h3>
+            <h2>Witness Statements</h2>
             ${witnessStatementsHTMLRep}
             `
         })

@@ -7,32 +7,6 @@ import { getFacilities, useFacilities } from "../facilities/FacilityProvider.js"
 const eventHub = document.querySelector(".container")
 const criminalsContainer = document.querySelector(".criminalsContainer")
 
-export const CriminalList = () => {
-
-  getCriminals()
-    .then(() => {
-      const criminalsArray = useCriminals()
-      renderToDom(criminalsArray)
-
-    })
-}
-
-const renderToDom = criminalCollection => {
-  let criminalsHTMLRepresentations = ""
-
-  for (const criminal of criminalCollection) {
-    criminalsHTMLRepresentations += Criminal(criminal)
-  }           
-           
-                     
-               
-      criminalsContainer.innerHTML = `
-        <h3>Glassdale Criminals</h3>
-        <section class="criminalList">
-            ${criminalsHTMLRepresentations}
-        </section>
-        `     
-}
 
 // Listen for the "crimeChosen" custom event you dispatched in ConvictionSelect
 eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
@@ -68,8 +42,10 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
           Then invoke render() and pass the filtered collection as
           an argument
       */
-  
-      renderToDom(filteredCriminalsArray)
+     const facilities = useFacilities()
+     const crimFac = useCriminalFacilities()
+
+      render(filteredCriminalsArray, facilities, crimFac)
     }
   })
 
@@ -86,13 +62,17 @@ eventHub.addEventListener("crimeChosen", crimeChosenEvent => {
             }
         }
     )
-    renderToDom(filteredCriminalsArray)
+    
+    const facilities = useFacilities()
+     const crimFac = useCriminalFacilities()
+
+      render(filteredCriminalsArray, facilities, crimFac)
 })
 
 
 
 
-export const FacilityList = () => {
+export const CriminalList = () => {
   // Kick off the fetching of both collections of data
   getFacilities()
       .then(getCriminals)
